@@ -9,12 +9,13 @@
 <body>
 <header>
 	<nav>
-		<% if user_signed_in? %>
-			Logged in as <strong><%= current_user.email %></strong>
-			<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+		<% if author_signed_in? %>
+			Logged in as <strong><%= current_author.email %></strong>
+			<%= link_to "プロフィール変更", edit_author_registration_path %>
+			<%= link_to "ログアウト", destroy_author_session_path, method: :delete %>
 		<% else %>
-			<%= link_to "サインイン", new_user_registration_path %>
-			<%= link_to "ログイン", new_user_session_path %>
+			<%= link_to "サインイン", new_author_registration_path %>
+			<%= link_to "ログイン", new_author_session_path %>
 		<% end %>
 	</nav>
 </header>
