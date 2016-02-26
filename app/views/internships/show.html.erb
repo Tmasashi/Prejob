@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>タイトル：</strong>
+  <%= @internship.name %>
+</p>
+
+<p>
+  <strong>案件内容：</strong>
+  <%= @internship.content %>
+</p>
+
+<p>
+  <strong>場所：</strong>
+  <%= @internship.place %>
+</p>
+
+<%= link_to '編集', edit_internship_path(@internship) %> |
+<%= link_to '戻る', internships_path %>
