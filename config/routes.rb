@@ -2,10 +2,8 @@ Rails.application.routes.draw do
   devise_for :authors
   resources :internships
 
-  root "internships#index"
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+  root to: "internships#index"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
