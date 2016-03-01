@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :authors
+  devise_for :students, controllers:{
+    sessions: 'students/sessions',
+    passwords: 'students/passwords',
+    registrations: 'students/registrations' 
+  }
+  devise_for :authors, controllers:{
+    sessions: 'companies/sessions',
+    passwords: 'companies/passwords',
+    registrations: 'companies/registrations' 
+  }
   resources :internships
 
   root to: "internships#index"
