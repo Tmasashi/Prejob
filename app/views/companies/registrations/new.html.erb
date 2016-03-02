@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %> <!-- select -->
+    <%= f.collection_select :category_id, Category.all, :id, :kind %>
   </div>
 
   <div class="field">
