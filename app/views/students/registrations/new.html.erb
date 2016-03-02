@@ -4,6 +4,36 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select :gender, [["男",0], ["女",1]] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :department_id %><br />
+    <%= f.collection_select :department_id, Department.all, :id, :major %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grade_id %><br />
+    <%= f.collection_select :grade_id, Grade.all, :id, :belonging %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture_id %><br />
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :place %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>

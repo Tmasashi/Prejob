@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302141447) do
+ActiveRecord::Schema.define(version: 20160302144606) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "kind"
@@ -41,9 +41,27 @@ ActiveRecord::Schema.define(version: 20160302141447) do
   add_index "companies", ["email"], name: "index_companies_on_email", unique: true
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
 
+  create_table "departments", force: :cascade do |t|
+    t.string   "major"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.string   "belonging"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "internships", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
+    t.string   "place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
     t.string   "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,6 +85,7 @@ ActiveRecord::Schema.define(version: 20160302141447) do
     t.integer  "gender"
     t.integer  "grade_id"
     t.integer  "prefecture_id"
+    t.integer  "department_id"
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true
