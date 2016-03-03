@@ -1,6 +1,6 @@
 class InternshipsController < ApplicationController
   before_action :set_internship, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_author!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_company!, only: [:new, :create, :edit, :update, :destroy]
   # GET /internships
   # GET /internships.json
   def index

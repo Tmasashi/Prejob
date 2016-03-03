@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %><br> 
     <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br> 
+    <%= f.collection_select :category_id, Category.all, :id, :kind %>
   </div>
   <div class="field">
     <%= f.label :content %><br>
@@ -22,6 +26,18 @@
   <div class="field">
     <%= f.label :place %><br>
     <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :income_id %><br> 
+    <%= f.collection_select :income_id, Income.all, :id, :price_band %>
+  </div>
+  <div class="field">
+    <%= f.label :term_id %><br> 
+    <%= f.collection_select :term_id, Term.all, :id, :time_period %>
+  </div>
+  <div class="field">
+    <%= f.label :working_day_id %><br> 
+    週<%= f.collection_select :working_day_id, WorkingDay.all, :id, :number %>
   </div>
   <div class="actions">
     <%= f.submit %>

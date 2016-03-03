@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302144606) do
+ActiveRecord::Schema.define(version: 20160303152839) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "kind"
@@ -53,12 +53,23 @@ ActiveRecord::Schema.define(version: 20160302144606) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "incomes", force: :cascade do |t|
+    t.string   "price_band"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "internships", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
     t.string   "place"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "company_id"
+    t.integer  "category_id"
+    t.integer  "income_id"
+    t.integer  "term_id"
+    t.integer  "working_day_id"
   end
 
   create_table "prefectures", force: :cascade do |t|
@@ -90,5 +101,17 @@ ActiveRecord::Schema.define(version: 20160302144606) do
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+
+  create_table "terms", force: :cascade do |t|
+    t.string   "time_period"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "working_days", force: :cascade do |t|
+    t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
