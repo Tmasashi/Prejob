@@ -7,30 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-	<nav>
-		<% if company_signed_in? %>
-			Logged in as <strong><%= current_company.email %></strong>
-			<%= link_to "プロフィール変更", edit_company_registration_path %>
-			<%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
-		<% elsif student_signed_in? %>
-			Logged in as <strong><%= current_student.email %></strong>
-			<%= link_to "プロフィール変更", edit_student_registration_path %>
-			<%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
-		<% else %>
-			<%= link_to "企業サインイン", new_company_registration_path %>
-			<%= link_to "企業ログイン", new_company_session_path %>
-			<%= link_to "学生サインイン", new_student_registration_path %>
-			<%= link_to "学生ログイン", new_student_session_path %>
-		<% end %>
-	</nav>
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="container">
+		<%= link_to "Prejob", '#', id: "logo" %>
+		<nav>
+			<% if company_signed_in? %>
+				<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to "プロフィール変更", edit_company_registration_path %>
+					</li>
+					<li><%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
+					</li>
+				</ul>
+			<% elsif student_signed_in? %>
+				<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to "プロフィール変更", edit_student_registration_path %>
+					</li>
+					<li><%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+					</li>
+				</ul>
+			<% else %>
+				<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to "企業サインイン", new_company_registration_path %></li>
+					<li><%= link_to "企業ログイン", new_company_session_path %></li>
+					<li><%= link_to "学生サインイン", new_student_registration_path %></li>
+					<li><%= link_to "学生ログイン", 	new_student_session_path %></li>
+				</ul>
+			<% end %>
+		</nav>
+	</div>
 </header>
 
-<p class="notice"><%= notice %></p>
+
 <p class="alert"><%= alert %></p>
 
-
-<%= yield %>
+<div class="container">
+	<%= yield %>
+</div>
 
 </body>
 </html>
