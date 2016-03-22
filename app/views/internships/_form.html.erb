@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br> 
-    <%= f.collection_select :category_id, Category.all, :id, :kind %>
+    <%= f.collection_select :category_id, Category.all, :id, :kind, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :content %><br>
@@ -29,15 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :income_id %><br> 
-    <%= f.collection_select :income_id, Income.all, :id, :price_band %>
+    <%= f.collection_select :income_id, Income.all, :id, :price_band, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :term_id %><br> 
-    <%= f.collection_select :term_id, Term.all, :id, :time_period %>
+    <%= f.collection_select :term_id, Term.all, :id, :time_period, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :working_day_id %><br> 
-    週<%= f.collection_select :working_day_id, WorkingDay.all, :id, :number %>
+    週<%= f.collection_select :working_day_id, WorkingDay.all, :id, :number, :include_blank => true %>日
   </div>
   <div class="actions">
     <%= f.submit %>

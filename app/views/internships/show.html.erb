@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>職種：</strong>
+  <%= @internship.category_id %>
+</p>
+
+<p>
   <strong>案件内容：</strong>
   <%= @internship.content %>
 </p>
@@ -15,5 +20,22 @@
   <%= @internship.place %>
 </p>
 
-<%= link_to '編集', edit_internship_path(@internship) %> |
+<p>
+  <strong>時給：</strong>
+  <%= @internship.income_id %>
+</p>
+
+<p>
+  <strong>期間：</strong>
+  <%= @internship.term_id %>
+</p>
+
+<p>
+  <strong>週間勤務日：</strong>
+  <%= @internship.working_day_id %>
+</p>
+
+<% if company_signed_in? %>
+	<%= link_to '編集', edit_internship_path(@internship) %> |
+<% end %>
 <%= link_to '戻る', internships_path %>

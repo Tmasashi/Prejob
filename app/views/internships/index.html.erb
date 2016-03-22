@@ -2,10 +2,11 @@
 
 <h1>投稿したインターン案件一覧</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>タイトル</th>
+      <th>職種</th>
       <th>案件内容</th>
       <th>場所</th>
       <th colspan="3"></th>
@@ -16,11 +17,16 @@
     <% @internships.each do |internship| %>
       <tr>
         <td><%= internship.name %></td>
+        <td><%= internship.category_id %></td>
         <td><%= internship.content %></td>
         <td><%= internship.place %></td>
-        <td><%= link_to '詳細表示', internship %></td>
-        <td><%= link_to '編集', edit_internship_path(internship) %></td>
-        <td><%= link_to '削除', internship, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        <% if student_signed_in? %>
+          <td><%= link_to '詳細表示', internship %></td>
+        <% else %>
+          <td><%= link_to '詳細表示', internship %></td>
+          <td><%= link_to '編集', edit_internship_path(internship) %></td>
+          <td><%= link_to '削除', internship, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,6 @@
 
 <br>
 
-<%= link_to '新しく案件を作る', new_internship_path %>
+<% if company_signed_in? %>
+  <%= link_to '新しく案件を作る', new_internship_path %>
+<% end %>
