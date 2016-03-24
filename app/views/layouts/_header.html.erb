@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 	<div class="container">
-		<%= link_to "Prejob", static_pages_home_path, id: "logo" %>
+		<%= link_to "Prejob", '#', id: "logo" %>
 		<nav>
 			<% if company_signed_in? %>
 				<ul class="nav navbar-nav navbar-right">
@@ -21,9 +21,9 @@
 				</ul>
 			<% else %>
 				<ul class="nav navbar-nav navbar-right">
-					<li><%= link_to "企業サインイン", new_company_registration_path %></li>
+					<li><%= link_to "企業登録", new_company_registration_path %></li>
 					<li><%= link_to "企業ログイン", new_company_session_path %></li>
-					<li><%= link_to "学生サインイン", new_student_registration_path %></li>
+					<li><%= link_to "学生登録", new_student_registration_path %></li>
 					<li><%= link_to "学生ログイン", 	new_student_session_path %></li>
 				</ul>
 			<% end %>

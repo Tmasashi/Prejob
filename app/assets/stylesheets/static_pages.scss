@@ -2,3 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.c-one{
+	color: #fff;
+	background-image: url(sky-sunrise.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.c-two{
+	color: #fff;
+	background-image: url(suit.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	h1, h2{
+	color: #fff !important;
+	}
+}
+.c-three{
+	color: #fff;
+	background-image: url(office_three.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	h1, h2{
+	color: #fff !important;
+	}
+}
+
+.c-four{
+	color: #fff;
+	background-image: url(register_two.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	h1{
+	color: #1987E5 !important;
+	}
+}

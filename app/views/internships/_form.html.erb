@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :working_day_id %><br> 
-    週<%= f.collection_select :working_day_id, WorkingDay.all, :id, :number, :include_blank => true %>日
+    週<%= f.collection_select :working_day_id, WorkingDay.all, :id, :number %>日
   </div>
   <div class="actions">
     <%= f.submit %>

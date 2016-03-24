@@ -2,6 +2,20 @@ class Students::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
+  def account_update_params
+    devise_parameter_sanitizer.sanitize(:account_update)
+  end
+
+  protected
+
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
+
+    def after_update_path_for(resource)
+      internships_path
+    end
+
   # GET /resource/sign_up
   # def new
   #   super

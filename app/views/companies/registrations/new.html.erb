@@ -1,48 +1,48 @@
-<h2>Sign up</h2>
+<h2>企業登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "企業名" %><br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :category_id %><br />
+    <%= f.label :category_id, "職種" %><br />
     <%= f.collection_select :category_id, Category.all, :id, :kind %>
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address, "所在地" %><br />
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :url %><br />
+    <%= f.label :url, "ホームページのURL" %><br />
     <%= f.text_field :url %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "Eメールアドレス" %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %>文字以上で入力してください)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "パスワード（確認用）" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>
 
