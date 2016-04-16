@@ -2,31 +2,24 @@
 	<div class="container">
 		<%= link_to "Prejob", '#', id: "logo" %>
 		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<i class="fa fa-twitter-square" aria-hidden="true"></i>
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
 			<% if company_signed_in? %>
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<%= link_to "プロフィール変更", edit_company_registration_path %>
-					</li>
-					<li><%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
-					</li>
-				</ul>
+				<li><%= link_to "プロフィール変更", edit_company_registration_path %></li>
+				<li><%= link_to "ログアウト", destroy_company_session_path, method: :delete %></li>
+
 			<% elsif student_signed_in? %>
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<%= link_to "プロフィール変更", edit_student_registration_path %>
-					</li>
-					<li>
-						<%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
-					</li>
-				</ul>
+				<li><%= link_to "プロフィール変更", edit_student_registration_path %></li>
+				<li><%= link_to "ログアウト", destroy_student_session_path, method: :delete %></li>
+
 			<% else %>
-				<ul class="nav navbar-nav navbar-right">
-					<li><%= link_to "企業登録", new_company_registration_path %></li>
-					<li><%= link_to "企業ログイン", new_company_session_path %></li>
-					<li><%= link_to "学生登録", new_student_registration_path %></li>
-					<li><%= link_to "学生ログイン", 	new_student_session_path %></li>
-				</ul>
+				<li><%= link_to "企業登録", new_company_registration_path %></li>
+				<li><%= link_to "企業ログイン", new_company_session_path %></li>
+				<li><%= link_to "学生登録", new_student_registration_path %></li>
+				<li><%= link_to "学生ログイン", 	new_student_session_path %></li>
 			<% end %>
+			</ul>
 		</nav>
 	</div>
 </header>
