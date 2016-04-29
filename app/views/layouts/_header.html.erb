@@ -9,11 +9,12 @@
 		<% end %>
 		
 		<nav>
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right dropdown-menu">
 			<% if company_signed_in? %>
+<<<<<<< HEAD
 				<li><%= link_to "プロフィール変更", edit_company_registration_path %></li>
 				<li><%= link_to "ログアウト", destroy_company_session_path, method: :delete %></li>
-
+>>>>>>> feature/login
 			<% elsif student_signed_in? %>
 				<li><%= link_to "プロフィール変更", edit_student_registration_path %></li>
 				<li><%= link_to "ログアウト", destroy_student_session_path, method: :delete %></li>

@@ -13,7 +13,12 @@ Rails.application.routes.draw do
     passwords: 'students/passwords',
     registrations: 'students/registrations' 
   }
-  resources :internships
+  resources :internships do
+    resource :appliances, only: [:create, :destroy]
+  end
+  resources :students do
+    get :appliances, on: :member
+  end
 
   root to: "static_pages#home"
   
