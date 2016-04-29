@@ -22,6 +22,10 @@
         <td><%= internship.place %></td>
         <% if student_signed_in? %>
           <td><%= link_to '詳細表示', internship %></td>
+          <% if applianced_by? %>
+           <td><%= link_to '応募取り消し', internship, method: :delete, data: {confirm: '応募を取り消してもよろしいですか？'} %></td>
+           <% else %>
+           <td><%= link_to '応募する', internship, method: :post %></td>
         <% else %>
           <td><%= link_to '詳細表示', internship %></td>
           <td><%= link_to '編集', edit_internship_path(internship) %></td>
