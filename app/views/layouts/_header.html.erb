@@ -19,8 +19,6 @@
 				<li><%= link_to "ログアウト", destroy_student_session_path, method: :delete %></li>
 
 			<% else %>
-				<li><i class="fa fa-twitter-square" aria-hidden="true"></i></li>
-				<li><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
 				<li><%= link_to "企業登録", new_company_registration_path %></li>
 				<li><%= link_to "企業ログイン", new_company_session_path %></li>
 				<li><%= link_to "学生登録", new_student_registration_path %></li>
