@@ -9,6 +9,7 @@ class AppliancesController < AppilcationController
 			redirect_to internships_url, notice: "応募しました"
 		else
 			redirect_to internships_url, alert: "この案件は応募できません"
+		end
 	end
 	def destroy
 		@appliance = student.appliances.find_by!(internship_id: params[:internship_id])
