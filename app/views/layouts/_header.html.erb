@@ -9,22 +9,25 @@
 		<% end %>
 		
 		<nav>
-			<ul class="nav navbar-nav navbar-right dropdown-menu">
 			<% if company_signed_in? %>
+			<ul class="nav navbar-nav navbar-right dropdown-menu">
 				<li><%= link_to "プロフィール変更", edit_company_registration_path %></li>
 				<li><%= link_to "ログアウト", destroy_company_session_path, method: :delete %></li>
+			</ul>
 
 			<% elsif student_signed_in? %>
+			<ul class="nav navbar-nav navbar-right dropdown-menu">
 				<li><%= link_to "プロフィール変更", edit_student_registration_path %></li>
 				<li><%= link_to "ログアウト", destroy_student_session_path, method: :delete %></li>
-
+			</ul>
 			<% else %>
+			<ul class="nav navbar-nav navbar-right dropdown-menu">
 				<li><%= link_to "企業登録", new_company_registration_path %></li>
 				<li><%= link_to "企業ログイン", new_company_session_path %></li>
 				<li><%= link_to "学生登録", new_student_registration_path %></li>
 				<li><%= link_to "学生ログイン", 	new_student_session_path %></li>
-			<% end %>
 			</ul>
+			<% end %>
 		</nav>
 	</div>
 </header>
