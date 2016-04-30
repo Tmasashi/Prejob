@@ -1,4 +1,4 @@
-class AppliancesController < AppilcationController
+class AppliancesController < ApplicationController
 	before_filter :require_login
 
 	def create
