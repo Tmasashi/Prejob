@@ -20,14 +20,14 @@
         <td><%= internship.category_id %></td>
         <td><%= internship.content %></td>
         <td><%= internship.place %></td>
+        <td><%= link_to '詳細表示', internship %></td>
         <% if student_signed_in? %>
-          <td><%= link_to '詳細表示', internship %></td>
-          <% if applianced_by? %>
-           <td><%= link_to '応募取り消し', internship, method: :delete, data: {confirm: '応募を取り消してもよろしいですか？'} %></td>
-           <% else %>
-           <td><%= link_to '応募する', internship, method: :post %></td>
+          <% if internship_applianced_by? %>
+            <td><%= link_to '応募取り消し', internship, method: :delete, data: {confirm: '応募を取り消してもよろしいですか？'} %></td>
+          <% else %>
+            <td><%= link_to '応募する', internship, method: :post %></td>
+          <% end %>
         <% else %>
-          <td><%= link_to '詳細表示', internship %></td>
           <td><%= link_to '編集', edit_internship_path(internship) %></td>
           <td><%= link_to '削除', internship, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
         <% end %>
